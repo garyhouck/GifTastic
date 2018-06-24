@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    background-color: aqua;
+    padding: 15px;
+    overflow: auto;
+    margin-bottom: 20px;
+    margin-top:0;
+    color: white;
+    font-size: 60px;
+    text-align: center;
+}
+#buttons {
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+.tvShow {
+    padding: 10px;
+    margin-left: 5px;
+    background-color: aqua;
+    border-color: aquamarine;
+}
+#tv-form {
+    margin-left: 15px;
+}
+#tv-input {
+    margin-bottom: 10px;
+    font-size: 20px;
+    border-color: aquamarine;
+}
+#find-show {
+    padding: 10px;
+    margin-left: 5px;
+    background-color: aqua;
+    border-color: aquamarine;
+}
+img {
+    width: 300px;
+    height: 200px;
+}

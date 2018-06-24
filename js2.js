@@ -18,8 +18,10 @@ for (var i = 0; i < topics.length; i++) {
     $("#buttons").append(gif);
 }
 
+
+
 // Click function to grab images 
-$("button").on("click", function() {
+ $("button").on("click", function() {
   let show = $(this).text();
   let queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
     show + "&api_key=dc6zaTOxFJmzC&limit=10";
@@ -46,18 +48,24 @@ $("button").on("click", function() {
           animateGif.attr("data-state", "animate");
           animateGif.addClass("tvShow");
           stillGif.prepend(p);
-          $("#gifs").prepend(stillGif); 
-
+          $("#gifs").prepend(stillGif);          
+          console.log(animateGif.attr("src")); 
+         
+          // change state of gif
           $(".tvShow").on("click",function() {
             let clickGif = $(this);
             let state = clickGif.attr("data-state");
-            if (state == "still") {
+            if (state === "still") {
               console.log("yay");
               clickGif.attr("src", animateGif);
-              clickGif.attr("data-state", "animate");
-              
+              clickGif.attr("data-state", "animate");           
              
-            }
+           }
+            else if (state === "animate") {
+             clickGif.attr("src", stillGif);
+             clickGif.attr("data-state", "still");
+             console.log(state);
+           }
            });  
                   
         }
