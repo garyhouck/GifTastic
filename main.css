@@ -11,16 +11,19 @@ h1 {
     color: white;
     font-size: 60px;
     text-align: center;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
+    border-bottom: 3px solid black;
 }
 #buttons {
     margin-bottom: 20px;
     margin-left: 10px;
 }
-.tvShow {
+.TVShow {
     padding: 10px;
     margin-left: 5px;
     background-color: aqua;
-    border-color: aquamarine;
+    border-color: black;
 }
 #tv-form {
     margin-left: 15px;
@@ -28,15 +31,30 @@ h1 {
 #tv-input {
     margin-bottom: 10px;
     font-size: 20px;
-    border-color: aquamarine;
+    border-color: aqua;
 }
 #find-show {
     padding: 10px;
     margin-left: 5px;
     background-color: aqua;
-    border-color: aquamarine;
+    border-color: black;
+    margin-bottom: 10px;
 }
 img {
     width: 300px;
     height: 200px;
+}
+#gifs {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1300px;
+}
+.tvShow {
+    padding: 10px;
+    margin-left: 5px;
+    background-color: aqua;
+    border-color: black;
+}
+.tvShowAnimate {
+    display: none;
 }

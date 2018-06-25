@@ -14,11 +14,18 @@ for (var i = 0; i < topics.length; i++) {
     gif.attr("data-name" , topics[i]);
     gif.attr("data-state")
     gif.text(topics[i]);
-    gif.addClass("tvShow");
+    gif.addClass("TVShow");
     $("#buttons").append(gif);
-}
+};
+// create button from user input
+$("#find-show").on("click", function() {
+  let tv = $("#tv-input").val();
+  let newButton = $("<button>");
+  newButton.text(tv);
+  newButton.addClass("TVShow");
+  $("#buttons").prepend(newButton);
 
-
+});
 
 // Click function to grab images 
  $("button").on("click", function() {
@@ -43,41 +50,46 @@ for (var i = 0; i < topics.length; i++) {
           let animateGif = $("<img>");
           stillGif.attr("src", results[i].images.original_still.url,);
           stillGif.attr("data-state", "still");
-          stillGif.addClass("tvShow");
+          stillGif.addClass("tvShow");          
           animateGif.attr("src", results[i].images.original.url,);
           animateGif.attr("data-state", "animate");
-          animateGif.addClass("tvShow");
-          stillGif.prepend(p);
-          $("#gifs").prepend(stillGif);          
-          console.log(animateGif.attr("src")); 
-         
-          // change state of gif
-          $(".tvShow").on("click",function() {
-            let clickGif = $(this);
-            let state = clickGif.attr("data-state");
-            if (state === "still") {
-              console.log("yay");
-              clickGif.attr("src", animateGif);
-              clickGif.attr("data-state", "animate");           
-             
-           }
-            else if (state === "animate") {
-             clickGif.attr("src", stillGif);
-             clickGif.attr("data-state", "still");
-             console.log(state);
-           }
-           });  
-                  
-        }
+          animateGif.addClass("tvShowAnimate");          
+          stillGif.append(p);
+          $("#gifs").prepend(stillGif);
+          $("#gifs").prepend(animateGif);
+          
+                   
+          console.log(animateGif.attr("src"));
+          console.log(stillGif.attr("src"));     
         
+        // end of loop         
+        }
+        //
        
-       
+       //end of ajax request
       });
-    
+      //
+   //end of  function
   });
-
+//
    // click event to animate gif
-
+  // change state of gif
+  $(".tvShow").on("click",function() {
+    let clickGif = $(this); 
+    console.log("this is " + (this));           
+    let state = clickGif.attr("data-state");
+    if (state === "still") {
+      console.log("yay");
+      clickGif.attr("src", animateGif);
+      clickGif.attr("data-state", "animate");                        
+      console.log(animateGif.attr("src"));
+   }
+    else if (state === "animate") {
+     clickGif.attr("src", stillGif);
+     clickGif.attr("data-state", "still");
+     console.log(state);
+   }
+   });  
   
   
 
