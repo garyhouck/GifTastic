@@ -24,11 +24,11 @@ $("#find-show").on("click", function() {
   newButton.text(tv);
   newButton.addClass("TVShow");
   $("#buttons").prepend(newButton);
-
+  
 });
 
 // Click function to grab images 
- $("button").on("click", function() {
+  $("button").on("click", function() {
   let show = $(this).text();
   let queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
     show + "&api_key=dc6zaTOxFJmzC&limit=10";
